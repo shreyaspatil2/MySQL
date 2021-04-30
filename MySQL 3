@@ -188,3 +188,52 @@ mysql> select * from mumbai_indians;
 7 rows in set (0.09 sec)
 
 mysql> # We can see the 5th entery in the table is changed
+mysql> # Now lets delete some rows from the table
+mysql> delete from mumbai_indians where id=7;
+Query OK, 1 row affected (0.19 sec)
+mysql> delete from mumbai_indians where PlayerName="Rahul Chahar";
+Query OK, 1 row affected (0.84 sec)
+mysql> select * from mumbai_indians;
++----+-------------+-----------------+---------------+------------------+
+| id | JersyNumber | PlayerName      | Speciality    | batting_position |
++----+-------------+-----------------+---------------+------------------+
+|  1 |          45 | Rohit_Sharma    | Batsman       |                2 |
+|  2 |          12 | Quinton De Kock | Wicket Keeper |                1 |
+|  3 |          50 | Hardik Pandya   | All Rounder   |                5 |
+|  5 |          81 | Trent Bolt      | Pace Bowler   |                9 |
+|  6 |          32 | Keiron Pollard  | All Rounder   |                5 |
++----+-------------+-----------------+---------------+------------------+
+5 rows in set (0.00 sec)
+
+mysql> # We can delete tables as well as views(virtual tables) as follows
+mysql> drop view mi;
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> select * from mi;
+ERROR 1146 (42S02): Table 'ipl.mi' doesn't exist
+mysql> drop table mumbai_indians;
+Query OK, 0 rows affected (0.65 sec)
+
+mysql> select * from mumbai_indians;
+ERROR 1146 (42S02): Table 'ipl.mumbai_indians' doesn't exist
+mysql> show tables;
+Empty set (0.10 sec)
+
+mysql> # There is no table named mumbai_indians in the ipl database
+mysql> # We can delete databases also
+mysql> drop database ipl;
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.10 sec)
