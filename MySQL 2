@@ -1285,5 +1285,143 @@ mysql> select CountryCode,Language from countrylanguage where IsOfficial='T';
 238 rows in set (0.00 sec)
 
 mysql> # So this is how we have displayed only official languages of each country and only two columns of the table are displayed
+mysql> # Similarly We can print countries and languages having more than 70% speaking population in the country as follows
+mysql> select CountryCode,Language from countrylanguage where Percentage>70;
++-------------+----------------------+
+| CountryCode | Language             |
++-------------+----------------------+
+| ABW         | Papiamento           |
+| ALB         | Albaniana            |
+| ANT         | Papiamento           |
+| ARG         | Spanish              |
+| ARM         | Armenian             |
+| ASM         | Samoan               |
+| ATG         | Creole English       |
+| AUS         | English              |
+| AUT         | German               |
+| AZE         | Azerbaijani          |
+| BDI         | Kirundi              |
+| BGD         | Bengali              |
+| BGR         | Bulgariana           |
+| BHS         | Creole English       |
+| BIH         | Serbo-Croatian       |
+| BMU         | English              |
+| BOL         | Spanish              |
+| BRA         | Portuguese           |
+| BRB         | Bajan                |
+| BWA         | Tswana               |
+| CHL         | Spanish              |
+| CHN         | Chinese              |
+| COL         | Spanish              |
+| COM         | Comorian             |
+| CPV         | Crioulo              |
+| CRI         | Spanish              |
+| CUB         | Spanish              |
+| CYP         | Greek                |
+| CZE         | Czech                |
+| DEU         | German               |
+| DMA         | Creole English       |
+| DNK         | Danish               |
+| DOM         | Spanish              |
+| DZA         | Arabic               |
+| ECU         | Spanish              |
+| EGY         | Arabic               |
+| ESH         | Arabic               |
+| ESP         | Spanish              |
+| FIN         | Finnish              |
+| FRA         | French               |
+| FRO         | Faroese              |
+| GBR         | English              |
+| GEO         | Georgiana            |
+| GIB         | English              |
+| GLP         | Creole French        |
+| GNQ         | Fang                 |
+| GRC         | Greek                |
+| GRD         | Creole English       |
+| GRL         | Greenlandic          |
+| GUF         | Creole French        |
+| GUY         | Creole English       |
+| HKG         | Canton Chinese       |
+| HND         | Spanish              |
+| HRV         | Serbo-Croatian       |
+| HTI         | Haiti Creole         |
+| HUN         | Hungarian            |
+| IRL         | English              |
+| IRQ         | Arabic               |
+| ISL         | Icelandic            |
+| ITA         | Italian              |
+| JAM         | Creole English       |
+| JOR         | Arabic               |
+| JPN         | Japanese             |
+| KHM         | Khmer                |
+| KIR         | Kiribati             |
+| KNA         | Creole English       |
+| KOR         | Korean               |
+| KWT         | Arabic               |
+| LBN         | Arabic               |
+| LBY         | Arabic               |
+| LCA         | Creole French        |
+| LIE         | German               |
+| LSO         | Sotho                |
+| LTU         | Lithuanian           |
+| MAC         | Canton Chinese       |
+| MDG         | Malagasy             |
+| MDV         | Dhivehi              |
+| MEX         | Spanish              |
+| MHL         | Marshallese          |
+| MLT         | Maltese              |
+| MNG         | Mongolian            |
+| MRT         | Hassaniya            |
+| MTQ         | Creole French        |
+| MUS         | Creole French        |
+| NIC         | Spanish              |
+| NLD         | Dutch                |
+| NOR         | Norwegian            |
+| NZL         | English              |
+| OMN         | Arabic               |
+| PAN         | Spanish              |
+| PER         | Spanish              |
+| PLW         | Palau                |
+| PNG         | Papuan Languages     |
+| POL         | Polish               |
+| PRK         | Korean               |
+| PRT         | Portuguese           |
+| PSE         | Arabic               |
+| REU         | Creole French        |
+| ROM         | Romanian             |
+| RUS         | Russian              |
+| RWA         | Rwanda               |
+| SAU         | Arabic               |
+| SGP         | Chinese              |
+| SLB         | Malenasian Languages |
+| SLV         | Spanish              |
+| SMR         | Italian              |
+| SOM         | Somali               |
+| STP         | Crioulo              |
+| SUR         | Sranantonga          |
+| SVK         | Slovak               |
+| SVN         | Slovene              |
+| SWE         | Swedish              |
+| SWZ         | Swazi                |
+| SYC         | Seselwa              |
+| SYR         | Arabic               |
+| TKM         | Turkmenian           |
+| TON         | Tongan               |
+| TTO         | English              |
+| TUR         | Turkish              |
+| TUV         | Tuvalu               |
+| URY         | Spanish              |
+| USA         | English              |
+| UZB         | Uzbek                |
+| VCT         | Creole English       |
+| VEN         | Spanish              |
+| VIR         | English              |
+| VNM         | Vietnamese           |
+| YEM         | Arabic               |
+| YUG         | Serbo-Croatian       |
+| ZWE         | Shona                |
++-------------+----------------------+
+130 rows in set (0.12 sec)
+
 mysql> # So far we have been only working on a table which was already available in our database
 mysql> # We can create and manipulate a table of our own in MySQL
