@@ -111,3 +111,80 @@ mysql> select * from mumbai_indians;
 7 rows in set (0.00 sec)
 
 mysql> # We have 7 values in our table now
+mysql> # Similary we can keep on adding values in our table
+mysql> # We can also alter the created table
+mysql> # Lets add one more column in the table
+mysql> alter table mumbai_indians add batting_position int;
+Query OK, 0 rows affected (1.68 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from mumbai_indians;
++----+-------------+------------------+---------------+------------------+
+| id | JersyNumber | PlayerName       | Speciality    | batting_position |
++----+-------------+------------------+---------------+------------------+
+|  1 |          45 | Rohit_Sharma     | Batsman       |             NULL |
+|  2 |          12 | Quinton De Kock  | Wicket Keeper |             NULL |
+|  3 |          50 | Hardik Pandya    | All Rounder   |             NULL |
+|  4 |          26 | Rahul Chahar     | Spinner       |             NULL |
+|  5 |          81 | Jasprit Bumrah   | Pace Bowler   |             NULL |
+|  6 |          32 | Keiron Pollard   | All Rounder   |             NULL |
+|  7 |          74 | Suryakumar Yadav | Batsman       |             NULL |
++----+-------------+------------------+---------------+------------------+
+7 rows in set (0.10 sec)
+
+mysql> # As we can see the new column is added to all the values are NULL
+mysql> # So we will insert values in that column only
+mysql> update mumbai_indians set batting_position = 1 where Speciality = "Wicket Keeper";
+Query OK, 1 row affected (0.17 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update mumbai_indians set batting_position = 2 where Speciality = "Batsman";
+Query OK, 2 rows affected (0.19 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update mumbai_indians set batting_position = 5 where Speciality = "All Rounder";
+Query OK, 2 rows affected (0.17 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update mumbai_indians set batting_position = 7 where Speciality = "Spinner";
+Query OK, 1 row affected (0.17 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update mumbai_indians set batting_position = 9 where Speciality = "Pace Bowler";
+Query OK, 1 row affected (0.28 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from mumbai_indians;
++----+-------------+------------------+---------------+------------------+
+| id | JersyNumber | PlayerName       | Speciality    | batting_position |
++----+-------------+------------------+---------------+------------------+
+|  1 |          45 | Rohit_Sharma     | Batsman       |                2 |
+|  2 |          12 | Quinton De Kock  | Wicket Keeper |                1 |
+|  3 |          50 | Hardik Pandya    | All Rounder   |                5 |
+|  4 |          26 | Rahul Chahar     | Spinner       |                7 |
+|  5 |          81 | Jasprit Bumrah   | Pace Bowler   |                9 |
+|  6 |          32 | Keiron Pollard   | All Rounder   |                5 |
+|  7 |          74 | Suryakumar Yadav | Batsman       |                2 |
++----+-------------+------------------+---------------+------------------+
+7 rows in set (0.00 sec)
+
+mysql> # Similarly as we updated the NULL values, we can also updated the existing values in the table
+mysql> update mumbai_indians set PlayerName = "Trent Bolt" where Speciality = "Pace Bowler";
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from mumbai_indians;
++----+-------------+------------------+---------------+------------------+
+| id | JersyNumber | PlayerName       | Speciality    | batting_position |
++----+-------------+------------------+---------------+------------------+
+|  1 |          45 | Rohit_Sharma     | Batsman       |                2 |
+|  2 |          12 | Quinton De Kock  | Wicket Keeper |                1 |
+|  3 |          50 | Hardik Pandya    | All Rounder   |                5 |
+|  4 |          26 | Rahul Chahar     | Spinner       |                7 |
+|  5 |          81 | Trent Bolt       | Pace Bowler   |                9 |
+|  6 |          32 | Keiron Pollard   | All Rounder   |                5 |
+|  7 |          74 | Suryakumar Yadav | Batsman       |                2 |
++----+-------------+------------------+---------------+------------------+
+7 rows in set (0.09 sec)
+
+mysql> # We can see the 5th entery in the table is changed
