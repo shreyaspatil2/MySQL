@@ -47,3 +47,67 @@ mysql> show databases;
 mysql> # As we can see our database is added and available to use
 mysql> use ipl;
 Database changed
+mysql> show tables;
+Empty set (0.02 sec)
+mysql> # There is no table is database ipl, so we will create a table
+mysql> create table mumbai_indians(
+    ->     id int NOT NULL auto_increment,
+    ->     JersyNumber int NOT NULL,
+    ->     PlayerName varchar(100) NOT NULL,
+    ->     Speciality varchar(100) NOT NULL,
+    ->     PRIMARY KEY (id)
+    ->     );
+Query OK, 0 rows affected (1.26 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_ipl  |
++----------------+
+| mumbai_indians |
++----------------+
+1 row in set (0.03 sec)
+
+mysql> # Our table is created
+mysql> select * from mumbai_indians;
+Empty set (0.00 sec)
+
+mysql> # There are no values in the mumbai_indians table
+mysql> # We can add values in the table as follows
+mysql> insert into mumbai_indians (JersyNumber, PlayerName, Speciality)
+    ->     values (45, "Rohit_Sharma", "Batsman");
+Query OK, 1 row affected (1.60 sec)
+
+mysql> select * from mumbai_indians;
++----+-------------+--------------+------------+
+| id | JersyNumber | PlayerName   | Speciality |
++----+-------------+--------------+------------+
+|  1 |          45 | Rohit_Sharma | Batsman    |
++----+-------------+--------------+------------+
+1 row in set (0.11 sec)
+
+mysql> # Similarly we can insert multiple valuesin the table at the same time
+mysql> insert into mumbai_indians (JersyNumber, PlayerName, Speciality)
+    ->     values (12,"Quinton De Kock","Wicket Keeper"),
+    ->     (50,"Hardik Pandya","All Rounder"),
+    ->     (26,"Rahul Chahar","Spinner"),
+    ->     (81,"Jasprit Bumrah","Pace Bowler"),
+    ->     (32,"Keiron Pollard","All Rounder"),
+    ->     (74,"Suryakumar Yadav","Batsman");
+Query OK, 6 rows affected (0.10 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from mumbai_indians;
++----+-------------+------------------+---------------+
+| id | JersyNumber | PlayerName       | Speciality    |
++----+-------------+------------------+---------------+
+|  1 |          45 | Rohit_Sharma     | Batsman       |
+|  2 |          12 | Quinton De Kock  | Wicket Keeper |
+|  3 |          50 | Hardik Pandya    | All Rounder   |
+|  4 |          26 | Rahul Chahar     | Spinner       |
+|  5 |          81 | Jasprit Bumrah   | Pace Bowler   |
+|  6 |          32 | Keiron Pollard   | All Rounder   |
+|  7 |          74 | Suryakumar Yadav | Batsman       |
++----+-------------+------------------+---------------+
+7 rows in set (0.00 sec)
+
+mysql> # We have 7 values in our table now
