@@ -167,3 +167,108 @@ mysql> select * from customers;
 |            496 | Kelly's Gift Shop                  | Snowden         | Tony             | +64 9 5555500      | Arenales 1938 3'A'               | NULL                     | Auckland          | NULL          | NULL       | New Zealand  |                   1612 |   110000.00 |
 +----------------+------------------------------------+-----------------+------------------+--------------------+----------------------------------+--------------------------+-------------------+---------------+------------+--------------+------------------------+-------------+
 122 rows in set (0.11 sec)
+
+mysql> # We can display unique values from a specific column of the table
+mysql> select distinct city from customers;
++-------------------+
+| city              |
++-------------------+
+| Nantes            |
+| Las Vegas         |
+| Melbourne         |
+| Stavern           |
+| San Rafael        |
+| Warszawa          |
+| Frankfurt         |
+| San Francisco     |
+| NYC               |
+| Madrid            |
+| Luleå             |
+| Kobenhavn         |
+| Lyon              |
+| Singapore         |
+| Allentown         |
+| Burlingame        |
+| Bergen            |
+| New Haven         |
+| Lisboa            |
+| Lille             |
+| Paris             |
+| Cambridge         |
+| Bridgewater       |
+| Kita-ku           |
+| Helsinki          |
+| Manchester        |
+| Dublin            |
+| Brickhaven        |
+| Liverpool         |
+| Vancouver         |
+| Pasadena          |
+| Strasbourg        |
+| Central Hong Kong |
+| Barcelona         |
+| Glendale          |
+| Cunewalde         |
+| Århus             |
+| Montréal          |
+| San Diego         |
+| Cowes             |
+| Toulouse          |
+| Torino            |
+| Versailles        |
+| Köln              |
+| Tsawassen         |
+| München           |
+| North Sydney      |
+| Bergamo           |
+| Chatswood         |
+| Fribourg          |
+| Genève            |
+| Oslo              |
+| Amsterdam         |
+| Berlin            |
+| Oulu              |
+| Bruxelles         |
+| White Plains      |
+| New Bedford       |
+| Auckland          |
+| London            |
+| Newark            |
+| South Brisbane    |
+| Espoo             |
+| Brandenburg       |
+| Philadelphia      |
+| Los Angeles       |
+| Cork              |
+| Marseille         |
+| Reims             |
+| Hatfield          |
+| Auckland          |
+| Münster           |
+| Boston            |
+| Nashua            |
+| Bern              |
+| Charleroi         |
+| Salzburg          |
+| Makati City       |
+| Reggio Emilia     |
+| Minato-ku         |
+| Stuttgart         |
+| Wellington        |
+| Munich            |
+| Leipzig           |
+| Bräcke            |
+| San Jose          |
+| Graz              |
+| Aachen            |
+| Glen Waverly      |
+| Milan             |
+| Burbank           |
+| Mannheim          |
+| Saint Petersburg  |
+| Herzlia           |
+| Sevilla           |
+| Brisbane          |
++-------------------+
+96 rows in set (0.03 sec)
+
